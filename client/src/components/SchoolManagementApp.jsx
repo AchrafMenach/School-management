@@ -1009,7 +1009,7 @@ const SchoolManagementApp = () => {
                             </span>
                             {student.price && (
                               <span className="text-sm font-medium text-green-600">
-                                {student.price}€/mois
+                                {student.price}DH/mois
                               </span>
                             )}
                           </div>
@@ -1158,7 +1158,7 @@ const SchoolManagementApp = () => {
                                   <div className="text-sm text-gray-600">{student.level}</div>
                                   {student.price && (
                                     <div className="text-sm text-green-600 font-medium">
-                                      {student.price}€/mois
+                                      {student.price}DH/mois
                                     </div>
                                   )}
                                   <div className="text-xs text-gray-500">
@@ -1231,7 +1231,7 @@ const SchoolManagementApp = () => {
                                           </div>
                                           {student.price && (
                                             <div className="text-xs text-gray-600 font-medium bg-gray-100 px-2 py-1 rounded-full mt-1">
-                                              {student.price}€
+                                              {student.price}DH
                                             </div>
                                           )}
                                         </div>
@@ -1287,7 +1287,7 @@ const SchoolManagementApp = () => {
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Ce mois</span>
                       <span className="text-lg font-bold text-green-600">
-                        {stats.totalRevenue.toFixed(0)}€
+                        {stats.totalRevenue.toFixed(0)}DH
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
@@ -1365,13 +1365,13 @@ const SchoolManagementApp = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
                     <span className="text-sm font-medium text-gray-700">Revenus confirmés ce mois</span>
-                    <span className="text-lg font-bold text-green-600">{stats.totalRevenue.toFixed(0)}€</span>
+                    <span className="text-lg font-bold text-green-600">{stats.totalRevenue.toFixed(0)}DH</span>
                   </div>
                   
                   <div className="flex justify-between items-center p-4 bg-orange-50 rounded-lg">
                     <span className="text-sm font-medium text-gray-700">Revenus en attente</span>
                     <span className="text-lg font-bold text-orange-600">
-                      {(stats.unpaidThisMonth * (students.reduce((sum, s) => sum + parseFloat(s.price || 0), 0) / students.length || 0)).toFixed(0)}€
+                      {(stats.unpaidThisMonth * (students.reduce((sum, s) => sum + parseFloat(s.price || 0), 0) / students.length || 0)).toFixed(0)}DH
                     </span>
                   </div>
                   
@@ -1382,7 +1382,7 @@ const SchoolManagementApp = () => {
                         const studentMonths = getMonthsForStudent(student.subscriptionMonth);
                         const currentMonth = `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}`;
                         return studentMonths.includes(currentMonth) ? sum + parseFloat(student.price || 0) : sum;
-                      }, 0).toFixed(0)}€
+                      }, 0).toFixed(0)}DH
                     </span>
                   </div>
                 </div>
@@ -1509,7 +1509,7 @@ const SchoolManagementApp = () => {
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Prix mensuel (€)
+                      Prix mensuel (DH)
                     </label>
                     <input
                       type="number"
@@ -1544,7 +1544,7 @@ const SchoolManagementApp = () => {
                       <p><strong>Nom complet:</strong> {formData.firstName} {formData.lastName}</p>
                       {formData.level && <p><strong>Niveau:</strong> {formData.level}</p>}
                       {formData.subscriptionMonth && <p><strong>Abonnement:</strong> {getMonthName(formData.subscriptionMonth)}</p>}
-                      {formData.price && <p><strong>Prix mensuel:</strong> {formData.price}€</p>}
+                      {formData.price && <p><strong>Prix mensuel:</strong> {formData.price}DH</p>}
                     </div>
                   </div>
                 )}
